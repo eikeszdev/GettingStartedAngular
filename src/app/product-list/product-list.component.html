@@ -1,0 +1,17 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products"> <!--Aqui vai repetir o que eu escrever abaixo para cada um dos itens dinamicamente-->
+    <a [title]="product.name + ' details'">
+        <h3>{{product.name}}</h3>
+    </a>
+
+    <!--Pra descrição usaremos o *ngIf, assim o angular só vai criar um <p> se o item tiver descrição-->
+    <p *ngIf="product.description"> <!--Se houver um .description no item retorna True e ele escreve-->
+        Description: {{product.description}}
+    </p>
+
+    <!-- () => é usado para dizer que irá esperar um evento, o nome do evento vai dentro dos parenteses. -->
+    <button type="button" (click)="share()"> Share </button>
+</div>
+
+<!-- Voltar a partir de "Pass Data to a child component"-->
