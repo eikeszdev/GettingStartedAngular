@@ -1,5 +1,6 @@
 
 <p *ngIf="product && product.price > 700">
     <!-- Só cria o botão caso exista um produto e o seu preço seja maior que 700 -->
-    <button type="button">Notify Me</button>
+    <button type="button" (click)="notify.emit()">Notify Me</button>
+    <!--Pra que esse componente funcione, preciso mantar um evento para o pai "productListComponent"-->
 </p>

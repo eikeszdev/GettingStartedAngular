@@ -14,7 +14,11 @@
     <button type="button" (click)="share()"> Share </button>
 
     <!-- Pego o "product" do component 'product-list' e passo como propriedade pro meu elemento 'app-product-alerts' -->
-    <app-product-alerts [product]="product"></app-product-alerts>
+    <app-product-alerts 
+    [product]="product" 
+    (notify)="onNotify()"
+    >
+</app-product-alerts>
 </div>
 
 <!-- Voltar a partir de "Pass Data to a child component"-->
