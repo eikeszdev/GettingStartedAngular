@@ -9,5 +9,5 @@ import { Product } from '../products';// Importando o objeto/arquivo que possui 
 
 export class ProductAlertsComponent { // também exportamos a classe que irá manipular as funcionalidades do componente
   @Input() product: Product | undefined; // O decorator "@input()" indica que a propriedade do valor (product) pode receber um valor a partir de um componente pai "Product", ou será vazio
-  @Output() notify = new EventEmitter(); // Configurando com o decorator "@Output" permitirá o component emitir um evento quando o valor de "notify", for alterado
+  @Output() notify = new EventEmitter(); // Configurando com o decorator "@Output" permitirá o component emitir um evento quando o valor de "notify" for alterado
 }

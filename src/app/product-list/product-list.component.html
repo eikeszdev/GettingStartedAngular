@@ -1,9 +1,14 @@
 <h2>Products</h2>
-
+<router-outlet>
 <div *ngFor="let product of products"> <!--Aqui vai repetir o que eu escrever abaixo para cada um dos itens dinamicamente-->
-    <a [title]="product.name + ' details'">
-        <h3>{{product.name}}</h3>
-    </a>
+    <h3>
+        <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]"
+        >
+            {{product.name}}
+        </a>
+    </h3>
 
     <!--Pra descrição usaremos o *ngIf, assim o angular só vai criar um <p> se o item tiver descrição-->
     <p *ngIf="product.description"> <!--Se houver um .description no item retorna True e ele escreve-->
@@ -14,11 +19,11 @@
     <button type="button" (click)="share()"> Share </button>
 
     <!-- Pego o "product" do component 'product-list' e passo como propriedade pro meu elemento 'app-product-alerts' -->
-    <app-product-alerts 
-    [product]="product" 
+    <app-product-alerts
+    [product]="product"
     (notify)="onNotify()"
     >
 </app-product-alerts>
 </div>
-
+</router-outlet>
 <!-- Voltar a partir de "Pass Data to a child component"-->

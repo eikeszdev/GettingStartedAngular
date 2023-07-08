@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { products } from '../products';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
